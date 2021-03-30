@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from model import IDAONet
 import torch
+from config import device
 from torch.utils.data import DataLoader
 
 from config import TEST_DIR_PUBLIC, TEST_DIR_PRIVATE, BATCH_SIZE, LABEL_ENCODER_NAME, ARCHITECTURE_NAME, device
@@ -17,8 +18,8 @@ if __name__ == "__main__":
 
     submit = pd.DataFrame(columns=['id'])
     submit['id'] = [path.name.replace('.png', '') for path in test_set.files]
-
-    model = torch.load(ARCHITECTURE_NAME).to(device)
+    model = IDAONet()
+    model.load_state_dict(torch.load(ARCHITECTURE_NAME, map_location=device))
     probs = predict(model, test_loader, device)
 
     label_encoder = pickle.load(open(LABEL_ENCODER_NAME, 'rb'))

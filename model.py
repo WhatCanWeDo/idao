@@ -1,6 +1,6 @@
 from torch import nn
 import timm 
-
+from config import device
 class IDAONet(nn.Module):
     def __init__(self):
         super().__init__()
