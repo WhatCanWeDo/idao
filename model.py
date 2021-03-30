@@ -1,6 +1,5 @@
-import timm
-from config import device
-import torch.nn as nn
+from torch import nn
+import timm 
 
 class IDAONet(nn.Module):
     def __init__(self):
