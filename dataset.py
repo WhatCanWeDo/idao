@@ -20,7 +20,7 @@ class IDAODataset(Dataset):
             raise NameError('Current mode not in data modes')
         self.len = len(self.files)
         if mode == 'val':
-            self.label_encoder = pickle.load(open(LABEL_ENCODER_NAME, 'rb'))
+            self.label_encoder = pickle.load(open("label_encoder.pkl", 'rb'))
         else:
             self.label_encoder = LabelEncoder()
 
@@ -58,7 +58,6 @@ class IDAODataset(Dataset):
     def _prepare_sample(self, image):
         """Here image could be processed"""
         image = np.array(image)
-        image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
         return self.crop(np.array(image))
 
     def show_image(self, index):
@@ -81,8 +80,6 @@ class IDAODataset(Dataset):
         image = transform(image)
         if self.mode == 'test':
             return image
-        if self.augmentation is not None:
-            image = self.augmentation(image=image)["image"]
         label_cl = self.label_encoder.transform([self.labels['classification'][index]]).item()
         label_reg = self.labels['regression'][index]
         return image, label_cl, label_reg

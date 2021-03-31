@@ -2,13 +2,12 @@ import pickle
 
 import numpy as np
 import pandas as pd
-from model import IDAONet
 import torch
-from config import device
 from torch.utils.data import DataLoader
 
-from config import TEST_DIR_PUBLIC, TEST_DIR_PRIVATE, BATCH_SIZE, LABEL_ENCODER_NAME, ARCHITECTURE_NAME, device
+from config import TEST_DIR_PUBLIC, TEST_DIR_PRIVATE, BATCH_SIZE, LABEL_ENCODER_NAME, MODEL_NAME, device
 from dataset import IDAODataset
+from model import IDAONet
 from utils import predict, round_nearest
 
 if __name__ == "__main__":
@@ -18,8 +17,8 @@ if __name__ == "__main__":
 
     submit = pd.DataFrame(columns=['id'])
     submit['id'] = [path.name.replace('.png', '') for path in test_set.files]
-    model = IDAONet()
-    model.load_state_dict(torch.load(ARCHITECTURE_NAME, map_location=device))
+    model = IDAONet(device)
+    model.load_state_dict(torch.load(MODEL_NAME, map_location=device))
     probs = predict(model, test_loader, device)
 
     label_encoder = pickle.load(open(LABEL_ENCODER_NAME, 'rb'))
@@ -34,3 +33,4 @@ if __name__ == "__main__":
     preds_reg = round_nearest(list(probs['regression']))
     submit['regression_predictions'] = preds_reg
     submit.to_csv('submission.csv', index=False)
+    exit(0)

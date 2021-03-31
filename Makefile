@@ -1,6 +1,6 @@
 all: build
 	
 build:
-	echo "Running now"
+	echo "YX"
 run:
 	bash run.sh
