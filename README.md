@@ -12,7 +12,7 @@ The test asks to properly assign each image to the correct particle type (ER/NR)
 ![statement image 3](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image3.png)
 ![statement image 4](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image4.png)
 
-For the Track 2 we had to submitted zip file with pretrained model, which would predict in runtime.
+For the Track 2 we had to submitted zip file with pretrained model, which would predict in runtime. \\
 **Objective**
 Your objective is to create a model that, given an event, outputs the energy of the particle.
 In the data there are electrons, He nucleus and energies in the range 1, 3, 6, 10, 20, 30 keV - 12 classes in total. We split those classes into training classes and test classes, with 3, 10, 30 keV electrons and 1, 6, 20 keV He being training classes and the remaining six being the test classes.
