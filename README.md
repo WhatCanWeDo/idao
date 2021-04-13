@@ -1,6 +1,8 @@
 # International data analysis olimpiad (IDAO)
 # Track 1 statement
 ![statement image](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image.png)
+
+
 The presence of Dark Matter (DM) in the Universe is nowadays an established, yet still mysterious, paradigm: deciphering its essence is one of the most compelling tasks for fundamental physics today.
 
 The nature of DM represents one of the key issues to understanding our Universe. Diﬀerent models predict the existence of neutral particles with a mass of few GeV or higher that would ﬁll our Galaxy. They could interact with the nuclei present in ordinary matter producing highly ionizing nuclear recoils (NR) with a kinetic energy as small as few keV. These NR would travel for hundreds to thousands of microns in gas leaving a trail of ionized atoms and free electrons.
@@ -10,6 +12,8 @@ Several experiments have been studied to detect those trails and possibly to rec
 
 
 ![statement image 2](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image2.png)
+
+
 Low energy photons produced by natural radioactivity can ionize electrons from atoms and molecules in the detector, producing recoils that would represent an important and dangerous background to Dark Matter signals. Electron recoils (ER) will produce distinctive and diverse patterns of ionization charge and therefore diﬀerent images, given the diﬀerent way they deposit energy and interact with matter.
 
 
@@ -22,6 +26,8 @@ The test asks to properly assign each image to the correct particle type (ER/NR)
 
 
 ![statement image 3](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image3.png)
+
+
 ![statement image 4](https://github.com/WhatCanWeDo/idao/blob/master/images/statement-image4.png)
 
 For the Track 2 we had to submitted zip file with pretrained model, which would predict in runtime. 
