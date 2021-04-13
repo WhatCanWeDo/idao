@@ -47,7 +47,7 @@ In the data there are electrons, He nucleus and energies in the range 1, 3, 6, 1
 Let's take a closer look at the data
 
 
-[](https://github.com/WhatCanWeDo/idao/blob/master/images/data_pic.jpg)
+[data distribution](https://github.com/WhatCanWeDo/idao/blob/master/images/data_pic.jpg)
 
 
 This picture for simple CNN embeddings and KNN to the calibration data. 
